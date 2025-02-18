@@ -21,7 +21,6 @@
     * Endpoints for score management
 * Data
     * Possibly use Firebase or SQL(SQLite, mySQL, etc.).
-
     * Store authentication data.
     * Store user scores, and functionality to search the stored scores based on given filtering options (given period of time played, regions of origin, top 10 scores, etc.).
     * Store report messages for blog posts.
@@ -35,37 +34,31 @@
 ## User stories
 * Player:
     * I want to create an account to sign up for my account so that I can play the snake game and track my score
-
 * Acceptance Criteria:
     * A registration page to sign up with username, password, and region 
     * A login page to login with my registered username and password
 
 * Player:
     * I hit a new high score, I want to submit this score to compete with other players
-
 * Acceptance Criteria:
     * The game will automatically send my score to the regional and worldwide leaderboard and organize in descending order
     * The score is linked between my account and the database
 
 * Player:
     * I want to view the leaderboard to see how my score compares with other players
-
 * Acceptance Criteria:
     * A profile page showing past game scores with timestamps
     * A leaderboard page with filter to view the top scores by region and worldwide
 
 * Player:
     * I want to log out of my account since I am done playing
-
 * Acceptance Criteria:
     * A logout button that logs the user out and redirects back to the login page
 
 * Admin:
     * I want to delete a user’s account and score since they were cheating and/or obtained their score by any illegitimate means
-
 * Acceptance Criteria:
     * There is an admin panel to manage all user accounts and scores with delete function
-
 
 ## UI design
 * Follow the basic design from [mdn](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents).
