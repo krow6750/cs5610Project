@@ -1,72 +1,80 @@
-# proposal
+# Proposal
 
-Guidance for your project proposal (proposal.md)
 
-## Section headings
-
-The proposal.md should include the following sections:
-
-* Team
-  * List names of team lead and team members
-* Project goal
-* User stories
-* UI design
-* Project requirements
-  * Add a section for each of the project requirements listed in the projects.md (additional guidance below).
-  * back end
-  * web API
-  * data
-  * user/admin views
+## Team
+* Kevin Chen
+* Jaee Oh
 
 ## Project goal
-
-Short description of project goal. This should be concise answer to the following questions:
-
-Are you...
-
-* ...building a site that has blogging functionality?
-* ...creating an e-commerce site?  Or a gaming site?
-* ...focussing on interactive data visualization or dashboard?
-* ...building something else?
-
-See: [How do I start to design my website?](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Design_and_accessibility/Thinking_before_coding) -- mdn
-
-## User stories
-
-Describe your user stories following the example in the React app demo...
-
-See: [User story](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_todo_list_beginning#our_apps_user_stories)
-
-If you expect multiple users with different roles, then you should describe multiple users' stories.
-
-## UI design
-
-Describe your UI design.
-An example of UI design appears in the mdn browser-extension section at mdn. That example is cited here to give you an
-idea of how you might describe your own proposed UI. You have flexibility in how you'd like to approach this
-proposal requirement. You may use UML, screen shots from a design tool such as figma.com, or some other approach that provides
-comparable information.
-
-* See: [Structuring documents](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents) -- mdn
-  * This link provides examples for design a single web page
-* See: [Browser extension UI design](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface) -- mdn
-  * This link provides an example for designing multi-component application
-  * It's the design of a web extension, but you can use it as a guideline for designing your web app
+* Create a flash game with score tracking
+* Create a leaderboard system organized by region (continents)
+* Create a simple blog function for users with a private report function for inappropriate posts.
 
 ## Project requirements
+* Back end:
+    * User authentication (login/register)
+    * Store individual user top scores with timestamps
+    * Admin/user roles for leaderboard management panel/game playing
+    * Using flask development server
+* Web API
+    * RESTful API endpoints (e.g. POST/register, POST/login, GET/user{id}
+    * Endpoints for score management
+* Data
+    * Possibly use Firebase or SQL(SQLite, mySQL, etc.).
 
-Add a section for each of the project requirements in the projects.md (in the class repo).
+    * Store authentication data.
+    * Store user scores, and functionality to search the stored scores based on given filtering options (given period of time played, regions of origin, top 10 scores, etc.).
+    * Store report messages for blog posts.
+* User/admin views
+    * User: View user’s own information and history of game plays, view data based on filters that the user provided, post/edit/delete user’s articles on a blog page, and read/report other user’s articles on a blog page.
+    * Admin: Everything that a user can do + Ability to edit the database for both user authentication, blog and game score data. View report messages for blog posts.
 
-While you are expected to synthesize concepts and technologies covered in class, 
-you have quite a bit of flexibility here. 
-Learning goals for the course include the ability to find, learn, and use additional tools. 
-You may therefore replace something that might have been a requirement from the class materials 
-with something worthy of the learning goals. 
-That means your proposal should answer relevant questions including (but not limited to)...
+## Project goal
+* We are building a website that hosts snake game with score tracking and a leaderboard system sorted by region. Players will be able to register accounts and compete for their region’s/worldwide top score. We will be using Flask for backend with a mySQL database to the user accounts and scores, and employing RESTful API for data exchange between the game client & server. Admins will have an admin panel to manage users, scoreboards, and blogging functions.
 
-* Are you proposing a full-stack application?  If not, why not and what will you do instead?
-* How will your app use data, including information about and/or provided by your users?
-* Will your app have authentication? If not, then how will you address security?
-* Will your app have a REST API? If not, why not and what will you do instead?
-* Will your app consume data from a web-accessible API? If not, why not and what will you do instead?
-* What technologies will you use, and why?
+## User stories
+* Player:
+    * I want to create an account to sign up for my account so that I can play the snake game and track my score
+
+* Acceptance Criteria:
+    * A registration page to sign up with username, password, and region 
+    * A login page to login with my registered username and password
+
+* Player:
+    * I hit a new high score, I want to submit this score to compete with other players
+
+* Acceptance Criteria:
+    * The game will automatically send my score to the regional and worldwide leaderboard and organize in descending order
+    * The score is linked between my account and the database
+
+* Player:
+    * I want to view the leaderboard to see how my score compares with other players
+
+* Acceptance Criteria:
+    * A profile page showing past game scores with timestamps
+    * A leaderboard page with filter to view the top scores by region and worldwide
+
+* Player:
+    * I want to log out of my account since I am done playing
+
+* Acceptance Criteria:
+    * A logout button that logs the user out and redirects back to the login page
+
+* Admin:
+    * I want to delete a user’s account and score since they were cheating and/or obtained their score by any illegitimate means
+
+* Acceptance Criteria:
+    * There is an admin panel to manage all user accounts and scores with delete function
+
+
+## UI design
+* Follow the basic design from [mdn](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents).
+
+![Alternative image text](../fig/sample-website.png)
+
+* This will be the basic UI for all pages.
+
+## assignments/deliverables
+* v0.1 -- non-functioning, multi-page prototype, tagged in team-lead's repo
+* v0.2 -- working prototype, tagged in the team-lead's repo
+* v0.3 -- final project w/docu
